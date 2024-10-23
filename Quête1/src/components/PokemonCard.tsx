@@ -3,7 +3,7 @@ interface PokemonCard {
 	imgSrc ? : string;
 }
 
-function PokemonCard({ pokemon }) {
+function PokemonCard({pokemon}) {
 	return (
 		<figure>
 			{pokemon.imgSrc ? (
