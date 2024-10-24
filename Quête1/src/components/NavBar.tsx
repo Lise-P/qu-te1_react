@@ -1,36 +1,36 @@
 import React from "react";
 
-
 interface Pokemon {
-name : string;
-imgSrc? : string;
+	name: string;
+	imgSrc?: string;
 }
 
 interface NavBarProps {
-pokemonIndex : number;
-setpokemonIndex: (index : number) => void;
-handlePrevClick: () => void;
-handleNextClick: () => void;
-pokemonList : Pokemon[];
+	pokemonIndex: number;
+	setPokemonIndex: (index: number) => void;
+	handlePrevClick: () => void;
+	handleNextClick: () => void;
+	pokemonList: Pokemon[];
 }
 
-function NavBar ({ pokemonIndex, handlePrevClick, handleNextClick, pokemonList} : NavBarProps) {
-return (
-<div className= "navbar">
-			{pokemonIndex > 0 && (
-				<button type="button" onClick={handlePrevClick}>
-					Précédent
+function NavBar({
+	setPokemonIndex,
+	handlePrevClick,
+	handleNextClick,
+	pokemonList,
+}: NavBarProps) {
+	return (
+		<div className="navbar">
+			{pokemonList.map((pokemon) => (
+				<button
+					key={pokemon.id}
+					onClick={() => setPokemonIndex(pokemon.id - 1)}
+				>
+					{pokemon.name}
 				</button>
-			)}
-
-{pokemonIndex < pokemonList.length - 1 && (
-				<button type="button" onClick={handleNextClick}>
-					Suivant
-				</button>
-)}
-
-</div>
-);
+			))}
+		</div>
+	);
 }
 
 export default NavBar;

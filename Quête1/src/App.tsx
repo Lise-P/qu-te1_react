@@ -9,16 +9,19 @@ const pokemonList = [
 
 		imgSrc:
 			"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+		id: 1,
 	},
 
 	{
 		name: "mew",
+		id: 2,
 	},
 	{
 		name: "charmander",
 
 		imgSrc:
 			"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+		id: 3,
 	},
 
 	{
@@ -26,6 +29,7 @@ const pokemonList = [
 
 		imgSrc:
 			"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+		id: 4,
 	},
 
 	{
@@ -33,6 +37,7 @@ const pokemonList = [
 
 		imgSrc:
 			"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+		id: 5,
 	},
 ];
 
@@ -55,10 +60,10 @@ function App() {
 		<>
 			<PokemonCard pokemon={pokemonList[pokemonIndex]} />
 			<NavBar
-				pokemonIndex={pokemonIndex}
+				pokemonList={pokemonList}
+				setPokemonIndex={setPokemonIndex}
 				handlePrevClick={handlePrevClick}
 				handleNextClick={handleNextClick}
-				pokemonList={pokemonList}
 			/>
 		</>
 	);
